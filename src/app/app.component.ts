@@ -4,7 +4,15 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  template: `
+    <main>
+
+    
+      <section>
+        <router-outlet/>
+      </section> 
+    </main>
+  `,
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
