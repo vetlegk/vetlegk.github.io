@@ -6,8 +6,6 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   template: `
     <main>
-
-    
       <section>
         <router-outlet/>
       </section> 
