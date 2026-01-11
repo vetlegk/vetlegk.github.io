@@ -5,6 +5,6 @@ export const routes: Routes = [
     {
         path: '',
         component: HomeComponent,
-        title: 'VGK - Dev & Design'
+        title: 'VGK - Development & Design'
     }
 ];

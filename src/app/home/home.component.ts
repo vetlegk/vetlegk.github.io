@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-home',
   imports: [],
   template: `
-    <p>
-      home works!
-    </p>
+    <div class="test">
+      <p>home works!</p>
+    </div>
   `,
   styleUrl: './home.component.scss'
 })

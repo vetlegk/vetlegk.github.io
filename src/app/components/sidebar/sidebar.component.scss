@@ -1,0 +1,90 @@
+.container {
+    position: fixed;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    height: 100vh;
+    width: 4vw; // Sidebar width (collapsed) correlates to margin-right of content-section
+    z-index: 10;
+    background-color: #221abd;
+    transition: .15s ease-in-out;
+}
+
+.container.expanded {
+    width: 12vw;        
+}
+
+.title {
+    color: white;
+    font-family: 'Alexandria', sans-serif;
+    letter-spacing: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.2rem;
+    transition: .2s;
+    text-wrap: nowrap;
+    opacity: 0;
+}
+
+.sub-title {
+    color: white;
+    font-family: 'Alexandria', sans-serif;
+    letter-spacing: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    transition: .2s;
+    text-wrap: nowrap;
+    opacity: 0;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.nav-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+    height: 25%;
+}
+
+.nav-button-text {
+    margin-left: 1rem;
+    color: white;
+    font-size: 18px;
+    opacity: 0;
+    text-wrap: nowrap;
+    transition: .2s;
+}
+
+.nav-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    background-color: transparent;
+    border: none;
+    border-bottom: transparent solid;
+    width: 100%;
+    padding: .5rem;
+    margin: 0;
+    box-shadow: 0 0 .4rem .2rem rgba(255, 255, 255, 0.0);
+    transition: 0.15s;
+}
+
+.nav-button:hover {
+    border-bottom: white solid;
+}
+
+.container.expanded .sub-title, .container.expanded .title, .container.expanded .nav-button-text {
+    opacity: 1;     
+}

@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet, SidebarComponent],
   template: `
     <main>
-      <app-header/>
-    
       <section>
         <router-outlet/>
       </section> 
+      
+      <app-sidebar/>
     </main>
   `,
   styleUrl: './app.component.scss'

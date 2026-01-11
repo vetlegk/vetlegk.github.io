@@ -1,6 +1,10 @@
 main {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
+    display: flex;
+}
+
+section {
+    width: 100%;
+    margin-right: 4vw; // Correlates to sidebar width (collapsed)
 }
