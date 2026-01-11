@@ -10,7 +10,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
       <section>
         <router-outlet/>
       </section> 
-      
+
       <app-sidebar/>
     </main>
   `,
