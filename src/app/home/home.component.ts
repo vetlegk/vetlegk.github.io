@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
     <div>
       <section class="eye-cather">
-        <h1>effektivitet i enkelhet</h1>
+        <h1>effektivitet i enkelhet.</h1>
       </section>
     </div>
   `,

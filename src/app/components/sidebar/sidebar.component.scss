@@ -10,13 +10,14 @@
     height: 100vh;
     width: 70px;
     z-index: 10;
-    background-color: #00000070;
+    background-color: black;
+    opacity: var(--sidebar-opacity-collapsed);
     transition: var(--sidebar-transition-speed) ease-in-out;
 }
 
 .container.expanded {
     width: 200px;    
-    background-color: #000000d1;    
+    opacity: var(--sidebar-opacity-hover);  
 }
 
 .title {
@@ -81,7 +82,7 @@
     width: 100%;
     padding: .5rem;
     margin: 0;
-    opacity: .40;
+    opacity: .70;
     transition: var(--sidebar-transition-speed);
 }
 

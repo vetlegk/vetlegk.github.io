@@ -60,7 +60,7 @@ export class SidebarComponent {
   // Navigation
 
   navigateToHome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 
   navigateToAbout() {

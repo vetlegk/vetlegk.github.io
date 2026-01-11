@@ -5,7 +5,7 @@ import { GradesComponent } from './grades/grades.component';
 
 export const routes: Routes = [
     {
-        path: 'home',
+        path: '',
         component: HomeComponent,
         title: 'VGK - Development & Design'
     },
