@@ -1,3 +1,4 @@
+
 .container {
     position: fixed;
     right: 0;
@@ -7,14 +8,15 @@
     justify-content: space-between;
     margin: 0;
     height: 100vh;
-    width: 4vw; // Sidebar width (collapsed) correlates to margin-right of content-section
+    width: 70px;
     z-index: 10;
-    background-color: #221abd;
-    transition: .15s ease-in-out;
+    background-color: #00000070;
+    transition: var(--sidebar-transition-speed) ease-in-out;
 }
 
 .container.expanded {
-    width: 12vw;        
+    width: 200px;    
+    background-color: #000000d1;    
 }
 
 .title {
@@ -25,7 +27,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 0.2rem;
-    transition: .2s;
+    transition: var(--sidebar-transition-speed);
     text-wrap: nowrap;
     opacity: 0;
 }
@@ -38,7 +40,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 0;
-    transition: .2s;
+    transition: var(--sidebar-transition-speed);
     text-wrap: nowrap;
     opacity: 0;
 }
@@ -58,12 +60,14 @@
 }
 
 .nav-button-text {
-    margin-left: 1rem;
     color: white;
     font-size: 18px;
     opacity: 0;
     text-wrap: nowrap;
-    transition: .2s;
+    opacity: 0;
+    margin-left: 0;
+    width: 0;
+    transition: var(--sidebar-transition-speed);
 }
 
 .nav-button {
@@ -77,14 +81,22 @@
     width: 100%;
     padding: .5rem;
     margin: 0;
-    box-shadow: 0 0 .4rem .2rem rgba(255, 255, 255, 0.0);
-    transition: 0.15s;
+    opacity: .40;
+    transition: var(--sidebar-transition-speed);
 }
 
 .nav-button:hover {
     border-bottom: white solid;
 }
 
-.container.expanded .sub-title, .container.expanded .title, .container.expanded .nav-button-text {
-    opacity: 1;     
+.container.expanded .sub-title,
+.container.expanded .title,
+.container.expanded .nav-button {
+    opacity: 1;  
+}
+
+.container.expanded .nav-button-text {
+    opacity: 1;
+    margin-left: 1rem;
+    width: auto;
 }

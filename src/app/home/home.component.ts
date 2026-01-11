@@ -4,8 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-home',
   imports: [],
   template: `
-    <div class="test">
-      <p>home works!</p>
+    <div>
+      <section class="eye-cather">
+        <h1>effektivitet i enkelhet</h1>
+      </section>
     </div>
   `,
   styleUrl: './home.component.scss'

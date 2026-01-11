@@ -1,10 +1,11 @@
-import { CommonModule, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { LucideAngularModule, House, IdCard, GraduationCap } from 'lucide-angular'
 
 @Component({
   selector: 'app-sidebar',
-  imports: [LucideAngularModule, NgIf],
+  imports: [CommonModule,LucideAngularModule],
   template: `
       <section 
       class="container"
@@ -13,19 +14,19 @@ import { LucideAngularModule, House, IdCard, GraduationCap } from 'lucide-angula
       (mouseleave)="onMouseLeave()"
     >
       <div class="nav-buttons-container">
-        <button class="nav-button">
+        <button class="nav-button" (click)="navigateToHome()">
           <lucide-icon [img]="House" size="32" color="white"></lucide-icon>
-          <p *ngIf="isExpanded" class="nav-button-text">Hjem</p>
+          <p class="nav-button-text">Hjem</p>
         </button>
 
-        <button class="nav-button">
+        <button class="nav-button" (click)="navigateToAbout()">
           <lucide-icon [img]="IdCard" size="32" color="white"></lucide-icon>
-          <p *ngIf="isExpanded" class="nav-button-text">Om Meg</p>
+          <p class="nav-button-text">Om Meg</p>
         </button>
 
-        <button class="nav-button">
+        <button class="nav-button" (click)="navigateToGrades()">
           <lucide-icon [img]="GraduationCap" size="32" color="white"></lucide-icon>
-          <p *ngIf="isExpanded" class="nav-button-text">Karakterer</p>
+          <p class="nav-button-text">Karakterer</p>
         </button>
       </div>
 
@@ -44,11 +45,29 @@ export class SidebarComponent {
 
   isExpanded: boolean = false;
 
+  constructor(private router: Router) {
+    this.router = router;
+  }
+
   onMouseEnter() {
     this.isExpanded = true;
   }
 
   onMouseLeave() {
     this.isExpanded = false;
+  }
+
+  // Navigation
+
+  navigateToHome() {
+    this.router.navigate(['/home']);
+  }
+
+  navigateToAbout() {
+    this.router.navigate(['/aboutme']);
+  }
+
+  navigateToGrades() {
+    this.router.navigate(['/grades']);
   }
 }

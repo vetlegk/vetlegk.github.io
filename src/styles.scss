@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300&family=Kanit:wght@300&display=swap');
 
+:root {
+    --sidebar-transition-speed: 0.15s;
+}
+
 p {
     padding: 0;
     margin: 0;
