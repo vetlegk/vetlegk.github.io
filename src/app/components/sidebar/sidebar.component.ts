@@ -15,18 +15,18 @@ import { LucideAngularModule, House, IdCard, GraduationCap } from 'lucide-angula
     >
       <div class="nav-buttons-container">
         <button class="nav-button" (click)="navigateToHome()">
-          <lucide-icon [img]="House" size="32" color="white"></lucide-icon>
+          <lucide-icon [img]="House" size="32" color="greenyellow"></lucide-icon>
           <p class="nav-button-text">Hjem</p>
         </button>
 
         <button class="nav-button" (click)="navigateToAbout()">
-          <lucide-icon [img]="IdCard" size="32" color="white"></lucide-icon>
+          <lucide-icon [img]="IdCard" size="32" color="greenyellow"></lucide-icon>
           <p class="nav-button-text">Om Meg</p>
         </button>
 
         <button class="nav-button" (click)="navigateToGrades()">
-          <lucide-icon [img]="GraduationCap" size="32" color="white"></lucide-icon>
-          <p class="nav-button-text">Karakterer</p>
+          <lucide-icon [img]="GraduationCap" size="32" color="greenyellow"></lucide-icon>
+          <p class="nav-button-text">Studier</p>
         </button>
       </div>
 

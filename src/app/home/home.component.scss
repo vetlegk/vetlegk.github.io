@@ -1,17 +1,34 @@
+
+
 .eye-cather {
     width: 100vw;
     height: 100vh;
     background-size: cover;
-    background-image: url("/mountain.jpg");
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
 }
 
 .eye-cather h1 {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 5vw;
-    top: 65vh;
-    color: white;
-    font-size: 5rem;
     font-family: 'Alexandria', sans-serif;
+    font-size: 8rem;
+    margin-bottom: 2rem;
+    color: greenyellow;
+}
+
+.eye-cather h4 {
+    font-size: 2rem;
+    margin-bottom: 25rem;
+    margin-left: 1rem;
+    color: greenyellow;
+}
+
+.eye-cather p {
+    font-size: 1.2rem;
+    width: 40rem;
+    padding: 1rem;
+    margin-left: 1rem;
+    border-radius: .5rem;
+    line-height: 1.8rem;
+    color: greenyellow;
 }

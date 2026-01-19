@@ -2,8 +2,14 @@
 
 :root {
     --sidebar-transition-speed: 0.15s;
-    --sidebar-opacity-collapsed: 0.7;
+    --sidebar-opacity-collapsed: 1;
     --sidebar-opacity-hover: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    font-family: 'Alexandria', sans-serif;
 }
 
 p {
