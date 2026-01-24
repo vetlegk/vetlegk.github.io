@@ -19,7 +19,7 @@ import { LucideAngularModule, House, IdCard, GraduationCap } from 'lucide-angula
           <p class="nav-button-text">Hjem</p>
         </button>
 
-        <button class="nav-button" (click)="navigateToAbout()">
+        <!--<button class="nav-button" (click)="navigateToAbout()">
           <lucide-icon [img]="IdCard" size="32" color="greenyellow"></lucide-icon>
           <p class="nav-button-text">Om Meg</p>
         </button>
@@ -27,7 +27,7 @@ import { LucideAngularModule, House, IdCard, GraduationCap } from 'lucide-angula
         <button class="nav-button" (click)="navigateToGrades()">
           <lucide-icon [img]="GraduationCap" size="32" color="greenyellow"></lucide-icon>
           <p class="nav-button-text">Studier</p>
-        </button>
+        </button>-->
       </div>
 
       <div class="title-container">

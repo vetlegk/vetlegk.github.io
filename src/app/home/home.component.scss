@@ -6,18 +6,22 @@
     background-size: cover;
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: center;
     padding: 4rem;
-}
 
+    
+}
 .eye-cather h1 {
     font-family: 'Alexandria', sans-serif;
-    font-size: 8rem;
+    font-size: 6rem;
     margin-bottom: 2rem;
     color: greenyellow;
 }
 
 .eye-cather h4 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-family: "Courier Prime", monospace;
     margin-bottom: 25rem;
     margin-left: 1rem;
     color: greenyellow;
@@ -30,5 +34,22 @@
     margin-left: 1rem;
     border-radius: .5rem;
     line-height: 1.8rem;
+    
+}
+
+
+.puzzle-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+
+}
+
+.puzzle-container h2 {
+    font-size: 3rem;
+    font-family: "Alexandria", sans-serif;
+    margin-bottom: 2rem;
     color: greenyellow;
 }
