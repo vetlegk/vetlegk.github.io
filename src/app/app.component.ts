@@ -22,6 +22,6 @@ import { SharedStateService } from './services/shared-state.service';
 export class AppComponent {
   
   constructor(public states: SharedStateService) {
-    console.log(states.showSidebar());
+
   }
 }

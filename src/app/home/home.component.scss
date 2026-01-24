@@ -1,55 +1,103 @@
 
 
-.eye-cather {
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    margin-bottom: 375px;
+
+    .title {
+        font-family: 'Alexandria', sans-serif;
+        font-size: 5rem;
+        margin-bottom: 150px;
+        color: greenyellow;
+        width: fit-content;
+    }
+    
+    .instructions {
+        font-size: 1.2rem;
+        font-family: "Alexandria", sans-serif;
+        border-color: greenyellow;
+        width: 600px;
+        line-height: 30px;
+    }
+}
+
+
+.page-line {
+    width: 85%;
+    margin-bottom: 100px;
+    height: 2px;
+    border: none;
+    background-color: greenyellow;
+}
+
+.code-input-container{
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    padding: 4rem;
 
-    
+    span {
+        color: greenyellow;
+        font-size: 6rem;
+        width: 80px;
+        border-bottom: 5px solid greenyellow;
+        margin: 50px;
+        margin-top: 200px;
+        text-align: center;
+    }
 }
-.eye-cather h1 {
-    font-family: 'Alexandria', sans-serif;
-    font-size: 6rem;
-    margin-bottom: 2rem;
-    color: greenyellow;
-}
-
-.eye-cather h4 {
-    font-size: 1.5rem;
-    font-family: "Courier Prime", monospace;
-    margin-bottom: 25rem;
-    margin-left: 1rem;
-    color: greenyellow;
-}
-
-.eye-cather p {
-    font-size: 1.2rem;
-    width: 40rem;
-    padding: 1rem;
-    margin-left: 1rem;
-    border-radius: .5rem;
-    line-height: 1.8rem;
-    
-}
-
 
 .puzzle-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 150px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+    margin: 100px 0;
+    padding: 0 30px;
+    width: 100vw;
 
+    .secret-text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
-.puzzle-container h2 {
-    font-size: 3rem;
-    font-family: "Alexandria", sans-serif;
-    margin-bottom: 2rem;
+.key-pad-container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 20px;
+    border-radius: 20px;
     color: greenyellow;
+    font-size: 2rem;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        border: 3px solid greenyellow;
+        border-radius: 20px;
+        font-family: "Courier Prime", monospace;
+        cursor: pointer;
+        transition: background-color 0.1s, color 0.3s;
+    }
+    
+    span:active {
+        background-color: greenyellow;
+        color: black;
+    }
 }

@@ -1,26 +1,48 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { SharedStateService } from '../services/shared-state.service';
+import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { SecretTextComponent } from '../components/secret-text/secret-text.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [CommonModule, SecretTextComponent],
   template: `
     <div>
-      <section class="eye-cather">
-        <h1>Hei! Velkommen..</h1>
+      <section class="content">
+        <div class="header-container">
+          <h2 class="title">Hei! Velkommen..</h2>
+          <h5 class="instructions">
+            Mitt navn er Vetle, og dette er min personlige hjemmeside.
+            Her kan du finne informasjon om meg, mine prosjekter, og karakterer.
+            Men først må du <i>finne den hemlige koden gjemt på siden...</i>
+          </h5>
+        </div>
+
+        <hr class="page-line">
+        
+        <div class="code-input-container">
+          <h5 style="color: greenyellow;;">Skriv inn koden ved hjelp av tastaturet nedenfor:</h5>
+
+          <div style="display: flex; jusifty-content: center; align-items: center;">
+            <span 
+              *ngFor="let n of [0,1,2,3]"
+              id="pad-input-{{n}}"
+              #padInputField
+            ></span>
+          </div>
+        </div>
 
         <div class="puzzle-container">
-          <h2>Skriv inn den hemmelig koden for å komme videre.</h2>
-
-          <h4>
+          <div class="secret-text-container">
+            <app-secret-text/>
+          </div>
+  
+          <div class="key-pad-container">
             <span
-              *ngFor="let char of displayText.split(''); let i = index;"
-              id="{{i}}" 
-              (mouseenter)="solveGibberish($event.target)"
-              (mouseleave)="scrampleText($event.target)"
-            >{{ char }}</span>
-          </h4>
+              *ngFor="let n of ['1','2','3','4','5','6','7','8','9', '0','Del','OK']"
+              #padButton
+              class="key-pad-button"
+            >{{ n }}</span>
+          </div>
         </div>
       </section>
     </div>
@@ -29,49 +51,25 @@ import { SharedStateService } from '../services/shared-state.service';
 })
 
 export class HomeComponent {
-  clearText: string = "Den hemmelige koden er 1738!";
-  displayText: string = "";
+  @ViewChildren('padButton') padButtons!: QueryList<ElementRef>;
+  @ViewChildren('padInputField') padInputs!: QueryList<ElementRef>;
 
-  private chars = '!@#$%^&*()-_=+[]{}|;:,.<>?';
+  inputIterator: number = 0;
 
-  constructor(public states: SharedStateService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.displayText = this.generateGibberish(this.clearText.length);
+  ngAfterViewInit() {
+
+    // Add eventlisteners to key pad buttons
+    this.padButtons.forEach((ref) => {
+      ref.nativeElement.addEventListener('click', (event: Event) => {
+        this.handlePadClick(event.target as HTMLElement)
+      })
+    })
   }
 
-  generateGibberish(length: number): string {
-    return Array.from({ length }, () => 
-      this.chars[Math.floor(Math.random() * this.chars.length)]
-    ).join('');
-  }
-
-  solveGibberish(spanElement: EventTarget | null) {
-    let charIndex = (spanElement as HTMLElement).id;
-    let iterations = 0;
-
-    const interval = setInterval(() => {
-      (spanElement as HTMLElement).textContent = this.chars[Math.floor(Math.random() * this.chars.length)];
-
-      if (iterations >= 8) {
-        (spanElement as HTMLElement).textContent = this.clearText[(charIndex as unknown as number)];
-        clearInterval(interval);
-      }
-      iterations += 1;
-    }, 70);
-  }
-
-  scrampleText(spanElement: EventTarget | null) {
-    
-    let timeoutId = setTimeout(() => {
-      let iterations = 0;
-
-      const interval = setInterval(() => {
-        (spanElement as HTMLElement).textContent = this.chars[Math.floor(Math.random() * this.chars.length)];
-        iterations >= 8 ? clearInterval(interval) : null;
-        iterations += 1;
-      }, 70);
-
-    }, 1100);
+  handlePadClick(spanElement: HTMLElement) {
+    console.log(`clicked ${spanElement.innerText}`);
   }
 }
+
